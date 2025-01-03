@@ -1,0 +1,11 @@
+.postCont {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.postImg {
+  width: 250px;
+  background: #dedede;
+  height: 180px;
+}
