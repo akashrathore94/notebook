@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Posts.module.css";
 import Title from "./Title";
+import { Link } from "react-router";
 
 function Posts({ posts }) {
   const [search, setSearch] = useState("");
@@ -72,13 +73,9 @@ function Posts({ posts }) {
   );
 }
 
-function Post({ post, handleClick }) {
+function Post({ post }) {
   return (
-    <div
-      key={post.id}
-      className={styles.postCont}
-      onClick={() => handleClick(post)}
-    >
+    <div key={post.id} className={styles.postCont}>
       <div className={styles.postImg}></div>
       <div
         className={styles.postDesc}
@@ -89,7 +86,7 @@ function Post({ post, handleClick }) {
           width: "400px",
         }}
       >
-        <p>{post.title}</p>
+        <Link to={`post/${post.id}`}>{post.title}</Link>
 
         <div>
           <p>views: {post.views}</p>
